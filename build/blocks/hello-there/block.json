@@ -1,0 +1,10 @@
+{
+	"name": "jslhpbp/hello",
+	"category": "jslhpbp",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "Genral Kenobi!"
+		}
+	}
+}
