@@ -2,11 +2,11 @@
 /**
  * _Lhpbp\i18n\Component class
  *
- * @package _lhpbp
+ * @package tecut
  */
 
-namespace _lhpbp\i18n;
-use _lhpbp\Component_Interface;
+namespace tecut\i18n;
+use tecut\Component_Interface;
 use function add_action;
 use function load_plugin_textdomain;
 
@@ -36,7 +36,7 @@ class Component implements Component_Interface {
 	 */
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain(
-			'_lhpbp',
+			'tecut',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

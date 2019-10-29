@@ -13,11 +13,11 @@ import icons from './icons';
  */
 
 setCategories( [
-	// Add a _lhpbp block category
+	// Add a tecut block category
 	{
-		slug: 'jslhpbp',
-		title: 'jslhpbp',
-		icon: icons._lhpbp,
+		slug: 'tecut',
+		title: 'tecut',
+		icon: icons.tecut,
 	},
-	...getCategories().filter( ( { slug } ) => slug !== 'jslhpbp' ),
+	...getCategories().filter( ( { slug } ) => slug !== 'tecut' ),
 ] );

@@ -2,10 +2,10 @@
 /**
  * _Lhpbp\Component_Interface interface
  *
- * @package _lhpbp
+ * @package tecut
  */
 
-namespace _lhpbp;
+namespace tecut;
 
 /**
  * Interface for a plugin component.

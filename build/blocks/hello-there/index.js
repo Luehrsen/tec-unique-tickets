@@ -18,12 +18,12 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __( 'Hello _lhpbp', '_lhpbp' ),
-	description: __( 'Sample block of the wp-plugin-boilerplate by Luehrsen // Heinrich.', '_lhpbp' ),
+	title: __( 'Hello tecut', 'tecut' ),
+	description: __( 'Sample block of the wp-plugin-boilerplate by Luehrsen // Heinrich.', 'tecut' ),
 	icon: icons.hello,
 	keywords: [
-		__( 'hello', '_lhpbp' ),
-		__( '_lhpbp', '_lhpbp' ),
+		__( 'hello', 'tecut' ),
+		__( 'tecut', 'tecut' ),
 	],
 	supports: {
 		align: true,

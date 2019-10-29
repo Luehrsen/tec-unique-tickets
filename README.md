@@ -1,57 +1,21 @@
-# Luehrsen // Heinrich Plugin Boilerplate for WordPress
+# Unique Tickets for the Events Calendar
 
-[![Build Status](https://travis-ci.com/luehrsenheinrich/wp-plugin-boilerplate.svg?branch=master)](https://travis-ci.com/luehrsenheinrich/wp-plugin-boilerplate)
+Sell unique tickets with Event Tickets for The Events Calendar.
 
-There are probably more plugin boilerplates than actual plugins available for
-bootstrapping your work on an amazing WordPress plugin. And that is very much
-okay, because every developer, every agency has their own little flavors in how
-they like to do things.
+This plugin is made with love and brought to you by the folks of [WP Munich](http://www.wp-munich.de) and [Luehrsen // Heinrich](http://www.luehrsen-heinrich.de).
 
-That is the reason we made this plugin boilerplate. We liked the work of so many
-other developers before us, but we never found the perfect boilerplate that fit
-our style of work. The result is this, a very opinionated plugin boilerplate
-based on docker, grunt and less-css.
+## Documentation
 
-This boilerplate will give you all the tools you need to write, test and publish
-your plugin, either for commercial clients or to publish the plugin in the
-WordPress.org repository.
+Developer documentation is available in the [Wiki](./../../wiki).
 
+## Contributing
 
-## Getting started
+Every bit of help is highly appreciated. Even if you don't code you can file an issue and help us find bugs or shape new features. Please see the [CONTRIBUTING.md](./CONTRIBUTING.md) on how to contribute.
 
-These steps will guide you through the setup process up until you can start
-writing functions, markup and styles for your plugin.
+## License
 
-For the sake of scope we will assume that you know the slug of your plugin.
-Please make sure that the slug is unique to the system of the client, our
-projects and the WordPress.org plugin repository.
+This plugin is licensed under [GNU General Public License v2 (or later)](./LICENSE.md).
 
-We will also assume, that you have already configured your GitHub repository to
-your liking, downloaded the source of the boilerplate and uploaded it to your
-new repository. So let's get started:
+## Changelog
 
-### Plugin Slug & Names
-
-- [ ] Rename the `build/_lhpbp.php` file
-- [ ] Search & Replace (case sensitive) `_lhpbp` with your new WordPress plugin slug
-- [ ] Search & Replace (case sensitive) `jslhpbp` with your new WordPress plugin slug in camelcase
-- [ ] Search & Replace (case sensitive) `_LHPBP` with your new WordPress plugin slug in uppercase
-- [ ] Check success in `package.json`, `docker-compose.json` & `bin/install-wordpress.sh`
-
-### Running the environment
-
-- [ ] Type `npm run setup` into the terminal to spin up the docker enviroment
-- [ ] Open `http://localhost/wp-admin` and log in with `wordpress:wordpress`
-- [ ] Make sure the plugin unit demo content is installed and the plugin is active
-
-### Test Release
-
-- [ ] Save the `.env.sample` as `.env` and add your GitHub token
-- [ ] Add a 0.0.2 release by running `npm run release` in your terminal
-- [ ] Check if the release has been created and uploaded in the GitHub release section
-
-### Finishing touches
-
-- [ ] Edit the `plugin-README.md` with the appropriate text about your plugin
-- [ ] Remove the `README.md` and rename `plugin-README.md` to be the new `README.md`
-- [ ] 🎉 Celebrate!
+Please find the current [changelog here](./../../releases).

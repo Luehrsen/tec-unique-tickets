@@ -2,11 +2,11 @@
 /**
  * _Lhpbp\Blocks\Component class
  *
- * @package _lhpbp
+ * @package tecut
  */
 
-namespace _lhpbp\Blocks;
-use _lhpbp\Component_Interface;
+namespace tecut\Blocks;
+use tecut\Component_Interface;
 use function add_action;
 use function register_block_type;
 use function wp_enqueue_script;
@@ -30,7 +30,7 @@ class Component implements Component_Interface {
 	 */
 	public function __construct() {
 		$this->block_list = array(
-			'jslhpbp/hello-there' => array(),
+			'tecut/hello-there' => array(),
 		);
 	}
 
@@ -62,53 +62,53 @@ class Component implements Component_Interface {
 	 */
 	public function register_scripts_styles() {
 		wp_register_script(
-			'_lhpbp-blocks-helper',
-			_LHPBP_URL . 'js/blocks-helper.min.js',
+			'tecut-blocks-helper',
+			TECUT_URL . 'js/blocks-helper.min.js',
 			array(),
 			'<%= pkg.version %>',
 			true
 		);
 
 		wp_add_inline_script(
-			'_lhpbp-blocks-helper',
-			'window._lhpbp = {};',
+			'tecut-blocks-helper',
+			'window.tecut = {};',
 			'before'
 		);
 
 		wp_register_script(
-			'_lhpbp-blocks-editor',
-			_LHPBP_URL . 'js/blocks.min.js',
-			array( '_lhpbp-blocks-helper', 'wp-block-library' ),
+			'tecut-blocks-editor',
+			TECUT_URL . 'js/blocks.min.js',
+			array( 'tecut-blocks-helper', 'wp-block-library' ),
 			'<%= pkg.version %>',
 			false
 		);
 
 		wp_register_script(
-			'_lhpbp-blocks-frontend',
-			_LHPBP_URL . 'js/blocks-frontend.min.js',
+			'tecut-blocks-frontend',
+			TECUT_URL . 'js/blocks-frontend.min.js',
 			array( 'jquery' ),
 			'<%= pkg.version %>',
 			true
 		);
 
 		wp_localize_script(
-			'_lhpbp-blocks-editor',
-			'_lhpbpPlugin',
+			'tecut-blocks-editor',
+			'tecutPlugin',
 			array(
-				'plugin_url' => _LHPBP_URL,
+				'plugin_url' => TECUT_URL,
 			)
 		);
 
 		wp_register_style(
-			'_lhpbp-blocks-editor-style',
-			_LHPBP_URL . 'css/blocks-editor.min.css',
+			'tecut-blocks-editor-style',
+			TECUT_URL . 'css/blocks-editor.min.css',
 			array(),
 			'<%= pkg.version %>'
 		);
 
 		wp_register_style(
-			'_lhpbp-blocks-style',
-			_LHPBP_URL . 'css/blocks.min.css',
+			'tecut-blocks-style',
+			TECUT_URL . 'css/blocks.min.css',
 			array(),
 			'<%= pkg.version %>'
 		);
@@ -120,7 +120,7 @@ class Component implements Component_Interface {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( '_lhpbp-blocks-frontend' );
+		wp_enqueue_script( 'tecut-blocks-frontend' );
 	}
 
 	/**
@@ -129,7 +129,7 @@ class Component implements Component_Interface {
 	 * @return void
 	 */
 	public function enqueue_footer_styles() {
-		wp_enqueue_style( '_lhpbp-blocks-style' );
+		wp_enqueue_style( 'tecut-blocks-style' );
 	}
 
 	/**
@@ -142,7 +142,7 @@ class Component implements Component_Interface {
 		$is_editor = ( ( $current_screen instanceof WP_Screen ) && $current_screen->is_block_editor() );
 
 		if ( $is_editor ) {
-			wp_enqueue_style( '_lhpbp-blocks-style' );
+			wp_enqueue_style( 'tecut-blocks-style' );
 		}
 	}
 	/**
@@ -156,8 +156,8 @@ class Component implements Component_Interface {
 
 		foreach ( $this->block_list as $block => $args ) {
 			$defaults = array(
-				'editor_script' => '_lhpbp-blocks-editor',
-				'editor_style'  => '_lhpbp-blocks-editor-style',
+				'editor_script' => 'tecut-blocks-editor',
+				'editor_style'  => 'tecut-blocks-editor-style',
 			);
 
 			$args = wp_parse_args( $args, $defaults );
@@ -174,7 +174,7 @@ class Component implements Component_Interface {
 	 */
 	public function register_i18n() {
 		if ( function_exists( 'wp_set_script_translations' ) ) {
-			wp_set_script_translations( '_lhpbp-blocks-editor', '_lhpbp' );
+			wp_set_script_translations( 'tecut-blocks-editor', 'tecut' );
 		}
 	}
 }

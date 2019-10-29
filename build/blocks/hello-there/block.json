@@ -1,6 +1,6 @@
 {
-	"name": "jslhpbp/hello",
-	"category": "jslhpbp",
+	"name": "tecut/hello",
+	"category": "tecut",
 	"attributes": {
 		"content": {
 			"type": "string",

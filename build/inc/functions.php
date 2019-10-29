@@ -1,11 +1,11 @@
 <?php
 /**
- * The `wp__lhpbp()` function.
+ * The `wp_tecut()` function.
  *
- * @package _lhpbp
+ * @package tecut
  */
 
-namespace _lhpbp;
+namespace tecut;
 
 /**
  * Provides access to all available functions of the plugin.
@@ -14,7 +14,7 @@ namespace _lhpbp;
  *
  * @return Plugin_Functions Plugin functions instance exposing plugin function methods.
  */
-function wp__lhpbp() {
+function wp_tecut() {
 	static $plugin = null;
 
 	if ( null === $plugin ) {

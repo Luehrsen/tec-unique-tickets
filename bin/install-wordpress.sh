@@ -39,7 +39,7 @@ if ! $(${WP_CLI} core is-installed); then
 	${WP_CLI} core update
 
 	# Activate Plugin
-	${WP_CLI} plugin activate _lhpbp
+	${WP_CLI} plugin activate tecut
 
 	# Import and activate needed plugins
 	${WP_CLI} plugin install gutenberg wordpress-importer query-monitor debug-bar --activate

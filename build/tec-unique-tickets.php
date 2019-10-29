@@ -2,7 +2,7 @@
 /**
  * The main file of the <%= pkg.title %> plugin
  *
- * @package _lhpbp
+ * @package tecut
  * @version <%= pkg.version %>
  *
  * Plugin Name: <%= pkg.title %>
@@ -11,7 +11,7 @@
  * Author: <%= pkg.author %>
  * Author URI: <%= pkg.authorUrl %>
  * Version: <%= pkg.version %>
- * Text Domain: _lhpbp
+ * Text Domain: tecut
  */
 
 // If this file is called directly, abort.
@@ -19,20 +19,20 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if ( ! defined( '_LHPBP_SLUG' ) ) {
-	define( '_LHPBP_SLUG', '<%= pkg.slug %>' );
+if ( ! defined( 'TECUT_SLUG' ) ) {
+	define( 'TECUT_SLUG', '<%= pkg.slug %>' );
 }
 
-if ( ! defined( '_LHPBP_VERSION' ) ) {
-	define( '_LHPBP_VERSION', '<%= pkg.version %>' );
+if ( ! defined( 'TECUT_VERSION' ) ) {
+	define( 'TECUT_VERSION', '<%= pkg.version %>' );
 }
 
-if ( ! defined( '_LHPBP_URL' ) ) {
-	define( '_LHPBP_URL', plugin_dir_url( __FILE__ ) );
+if ( ! defined( 'TECUT_URL' ) ) {
+	define( 'TECUT_URL', plugin_dir_url( __FILE__ ) );
 }
 
-if ( ! defined( '_LHPBP_PATH' ) ) {
-	define( '_LHPBP_PATH', plugin_dir_path( __FILE__ ) );
+if ( ! defined( 'TECUT_PATH' ) ) {
+	define( 'TECUT_PATH', plugin_dir_path( __FILE__ ) );
 }
 
 /**
@@ -47,15 +47,15 @@ if ( ! defined( '_LHPBP_PATH' ) ) {
  * @param string $class_name Class name to load.
  * @return bool True if the class was loaded, false otherwise.
  */
-function _lhpbp_autoload( $class_name ) {
-	$namespace = '_lhpbp';
+function tecut_autoload( $class_name ) {
+	$namespace = 'tecut';
 
 	if ( strpos( $class_name, $namespace . '\\' ) !== 0 ) {
 		return false;
 	}
 
 	$parts = explode( '\\', substr( $class_name, strlen( $namespace . '\\' ) ) );
-	$path  = _LHPBP_PATH . 'inc';
+	$path  = TECUT_PATH . 'inc';
 
 	foreach ( $parts as $part ) {
 		$path .= '/' . $part;
@@ -72,10 +72,10 @@ function _lhpbp_autoload( $class_name ) {
 
 	return true;
 }
-spl_autoload_register( '_lhpbp_autoload' );
+spl_autoload_register( 'tecut_autoload' );
 
-// Load the `wp__lhpbp()` entry point function.
-require _LHPBP_PATH . 'inc/functions.php';
+// Load the `wp_tecut()` entry point function.
+require TECUT_PATH . 'inc/functions.php';
 
 // Initialize the plugin.
-call_user_func( '_lhpbp\wp__lhpbp' );
+call_user_func( 'tecut\wp_tecut' );
