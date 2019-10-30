@@ -42,7 +42,7 @@ if ! $(${WP_CLI} core is-installed); then
 	${WP_CLI} plugin activate tecut
 
 	# Import and activate needed plugins
-	${WP_CLI} plugin install gutenberg wordpress-importer query-monitor debug-bar --activate
+	${WP_CLI} plugin install gutenberg wordpress-importer query-monitor debug-bar the-events-calendar event-tickets --activate
 
 	# Activate debugging
 	${WP_CLI} config set WP_DEBUG true --raw
